@@ -18,10 +18,6 @@ $courses = $wpdb->get_results($wpdb->prepare("
         c.course_id,
         c.title,
         c.slug,
-        c.short_description,
-        c.cover_image_url,
-        c.duration_hours,
-        c.price,
         cat.name AS category_name
     FROM cmgh_course c
     INNER JOIN cmgh_category cat
@@ -39,41 +35,19 @@ if (empty($courses)) {
 
 <div <?php echo get_block_wrapper_attributes(['class' => 'cmgh-course-grid']); ?>>
     <?php foreach ($courses as $course) : ?>
-        <div class="course-card">
-            <?php if (!empty($course->cover_image_url)) : ?>
-                <img 
-                    src="<?php echo esc_url($course->cover_image_url); ?>" 
-                    alt="<?php echo esc_attr($course->title); ?>"
-                    class="course-image"
-                >
-            <?php endif; ?>
+		<a
+			href="<?php echo esc_url(home_url('/course/' . ($course->slug ?: $course->course_id))); ?>"
+			class="course-card"
+		>
+			<div class="course-content">
+				<h3 class="course-title">
+					<?php echo esc_html($course->title); ?>
+				</h3>
 
-            <div class="course-content">
-                <!-- <span class="course-category">
-                    <?php echo esc_html($course->category_name); ?>
-                </span> -->
-                
-                <h3 class="course-title">
-                    <?php echo esc_html($course->title); ?>
-                </h3>
-                
-                <p class="course-description">
-                    <?php echo esc_html($course->short_description); ?>
-                </p>
-                
-                <!-- <div class="course-meta">
-                    <span class="duration">
-                        <?php echo esc_html($course->duration_hours); ?> Hours
-                    </span>
-                    <span class="price">
-                        $<?php echo number_format((float)$course->price, 2); ?>
-                    </span>
-                </div> -->
-                <a 
-                    href="<?php echo esc_url(home_url('/course/' . ($course->slug ?: $course->course_id))); ?>" 
-                    class="btn course-btn"
-                >View course</a>
-            </div>
-        </div>
+				<!-- <p class="course-description">
+					<?php echo esc_html($course->short_description); ?>
+				</p> -->
+			</div>
+		</a>
     <?php endforeach; ?>
 </div>
