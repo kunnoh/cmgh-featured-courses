@@ -21,5 +21,5 @@
  */
 
 /* eslint-disable no-console */
-console.log( 'Hello World! (from create-block-cmgh-featured-courses block)' );
+// console.log( 'Hello World! (from create-block-cmgh-featured-courses block)' );
 /* eslint-enable no-console */

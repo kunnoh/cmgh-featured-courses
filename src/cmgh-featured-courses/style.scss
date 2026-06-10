@@ -4,9 +4,26 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
-
 .wp-block-create-block-cmgh-featured-courses {
-	background-color: #21759b;
-	color: #fff;
+	background-color: transparent;
+	color: black;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.cmgh-course-grid{
+	display: flex;
+	align-items: stretch;
+	gap: .5em;
 	padding: 2px;
+}
+.course-card{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: whitesmoke;
+	border-radius: 5px;
+	padding: .5em;
+	flex: 1;
 }

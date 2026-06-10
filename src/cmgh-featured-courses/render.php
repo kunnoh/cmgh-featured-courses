@@ -49,9 +49,9 @@ if (empty($courses)) {
             <?php endif; ?>
 
             <div class="course-content">
-                <span class="course-category">
+                <!-- <span class="course-category">
                     <?php echo esc_html($course->category_name); ?>
-                </span>
+                </span> -->
                 
                 <h3 class="course-title">
                     <?php echo esc_html($course->title); ?>
@@ -61,21 +61,18 @@ if (empty($courses)) {
                     <?php echo esc_html($course->short_description); ?>
                 </p>
                 
-                <div class="course-meta">
+                <!-- <div class="course-meta">
                     <span class="duration">
                         <?php echo esc_html($course->duration_hours); ?> Hours
                     </span>
                     <span class="price">
                         $<?php echo number_format((float)$course->price, 2); ?>
                     </span>
-                </div>
-                
+                </div> -->
                 <a 
-                    href="<?php echo esc_url(home_url('/course/' . $course->slug)); ?>" 
+                    href="<?php echo esc_url(home_url('/course/' . ($course->slug ?: $course->course_id))); ?>" 
                     class="btn course-btn"
-                >
-                    View Course
-                </a>
+                >View course</a>
             </div>
         </div>
     <?php endforeach; ?>
