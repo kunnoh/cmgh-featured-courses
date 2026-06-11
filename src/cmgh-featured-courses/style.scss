@@ -4,31 +4,76 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
-.wp-block-create-block-cmgh-featured-courses {
-	background-color: transparent;
-	color: black;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
+// .wp-block-create-block-cmgh-featured-courses {
+// 	background-color: transparent;
+// 	color: black;
+// 	display: flex;
+// 	flex-direction: row;
+// 	justify-content: center;
+// 	align-items: center;
+// }
+// .cmgh-course-grid{
+// 	display: flex;
+// 	align-items: stretch;
+// 	gap: .5em;
+// 	padding: 2px;
+// 	flex-wrap: wrap;
+// }
+// .course-card{
+// 	display: flex;
+// 	text-decoration: none;
+// 	justify-content: center;
+// 	align-items: center;
+// 	background: whitesmoke;
+// 	border-radius: 8px;
+// 	padding: .5em;
+// 	flex: 1;
+// 	transition: transform .2s ease, box-shadow .2s ease;
+// }
+// .course-card:hover {
+//     transform: translateY(-4px);
+//     box-shadow: 0 4px 12px rgba(0,0,0,.1);
+// }
+
+.cmgh-course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
 }
-.cmgh-course-grid{
-	display: flex;
-	align-items: stretch;
-	gap: .5em;
-	padding: 2px;
+
+.course-card {
+    display: block;
+    padding: 24px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all .3s ease;
 }
-.course-card{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background: whitesmoke;
-	border-radius: 8px;
-	padding: .5em;
-	flex: 1;
-	transition: transform .2s ease, box-shadow .2s ease;
-}
+
 .course-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0,0,0,.1);
+    box-shadow: 0 8px 24px rgba(0,0,0,.08);
+}
+
+.course-category {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #666;
+}
+
+.course-title {
+    margin: 0 0 15px;
+    font-size: 20px;
+    line-height: 1.4;
+    color: #222;
+}
+
+.course-link {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0073aa;
 }
